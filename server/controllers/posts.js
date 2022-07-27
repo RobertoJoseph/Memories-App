@@ -16,18 +16,41 @@ export const createPost = async (req, res) => {
   await postMssage.save();
   res.send(postMssage);
 };
-
 export const updatePost = async (req, res) => {
-  const id = req.params.id;
-  console.log("Iam updated here");
-  const post = req.body;
-  if (!mongoose.Types.ObjectId.isValid(id))
-    return res.status(404).send("No post with that id");
+  const { id } = req.params;
+  const { title, message, creator, selectedFile, tags } = req.body;
 
-  const updatePost = await PostMessage.findByIdAndUpdate(
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send(`No post with id: ${id}`);
+
+  const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
+
+  await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
+
+  res.json(updatedPost);
+};
+
+export const deletePost = async (req, res) => {
+  console.log("??");
+  const id = req.params.id;
+  //Getting the object itself and send it
+  await PostMessage.findByIdAndRemove(id);
+  console.log("Iam Deleted");
+  res.send({ message: "Deleted Succesfuly" });
+};
+export const likePost = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send(`No post with id: ${id}`);
+
+  const post = await PostMessage.findById(id);
+
+  const updatedPost = await PostMessage.findByIdAndUpdate(
     id,
-    { ...post, id },
+    { likeCount: post.likeCount + 1 },
     { new: true }
   );
-  res.send(updatePost);
+
+  res.json(updatedPost);
 };
