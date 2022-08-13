@@ -58,10 +58,25 @@ export const likePost = async (req, res) => {
   if (index === -1) {
     post.likes.push(req.userId);
   } else {
-    post.likes = post.likes.filter((id) =>id !== String(req.userId));
+    post.likes = post.likes.filter((id) => id !== String(req.userId));
   }
   const updatedPost = await PostMessage.findByIdAndUpdate(id, post, {
     new: true,
   });
   res.json(updatedPost);
+};
+
+export const getPostBySearch = async (req, res) => {
+  const { searchQuery, tags } = req.query;
+  console.log(tags);
+  try {
+    const title = new RegExp(searchQuery, "i");
+    console.log(title);
+    const posts = await PostMessage.find({
+      $or: [{ title }, { tags: { $in: tags.split(",") } }],
+    });
+    res.json(posts);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
 };

@@ -13,6 +13,7 @@ const Form = ({ currentId, setCurrentId }) => {
     selectedFile: "",
   });
   const classes = useStyles();
+  
   const post = useSelector((state) =>
     currentId ? state.posts.find((p) => p._id === currentId) : null
   );
