@@ -11,7 +11,7 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const fetchPosts = async () => await API.get("/posts");
+export const fetchPosts = async (page) => await API.get(`/posts?page=${page}`);
 export const createPost = async (newPost) => await API.post("/posts", newPost);
 export const updatePost = async (id, updatePost) =>
   await API.patch(`/posts/${id}`, updatePost);
@@ -30,5 +30,9 @@ export const getPostBySearch = (searchQuery) =>
     `/posts/search?searchQuery=${searchQuery.search || "none"}&tags=${
       searchQuery.tags
     }`
-    
   );
+
+export const getPost = (id) => API.get(`/posts/${id}`);
+
+export const commentPost = (value, id) =>
+  API.post(`/posts/${id}/commentPost`, { value });

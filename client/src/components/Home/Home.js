@@ -33,10 +33,6 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
 
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [currentId, dispatch]);
-
   const handleAdd = (tag) => setTags([...tags, tag]);
 
   const handleDelete = (tagToDelete) =>
@@ -46,6 +42,9 @@ const Home = () => {
     console.log("THIS IS", tags);
     if (search.trim() || tags) {
       dispatch(getPostBySearch({ search, tags: tags.join(",") }));
+      history.push(
+        `posts/search?searchQuery=${search || "none"}&tags=${tags.join(",")}`
+      );
     } else {
       history.push("/");
     }
@@ -101,8 +100,9 @@ const Home = () => {
                 </Button>
               </AppBar>
               <Form currentId={currentId} setCurrentId={setCurrentId}></Form>
+
               <Paper elevation={6}>
-                <Pagination />
+                <Pagination page={page} className={classes.pagination} />
               </Paper>
             </Grid>
           </Grid>

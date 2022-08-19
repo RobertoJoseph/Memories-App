@@ -14,6 +14,10 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/users", userRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API IS RUNNING");
+});
+
 app.use(error);
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 8000;

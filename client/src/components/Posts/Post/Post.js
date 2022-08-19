@@ -6,6 +6,7 @@ import {
   CardMedia,
   Button,
   Typography,
+  ButtonBase,
 } from "@material-ui/core/";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined";
@@ -17,18 +18,13 @@ import { useDispatch } from "react-redux";
 
 import { likePost, deletePost } from "../../../actions/posts";
 import useStyles from "./styles";
+import { useHistory } from "react-router-dom";
 
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = parseJson();
-  console.log("THis is the post");
-  console.log("This is the post ", post.creator);
-  console.log("This is the user");
-  console.log("This is the user ", user?.result.sub);
-
-  console.log("CHecking the ids ");
-  console.log(user?.result.sub === post.creator);
+  const history = useHistory();
 
   function parseJson() {
     try {
@@ -43,6 +39,9 @@ const Post = ({ post, setCurrentId }) => {
     console.log(user);
   }, []);
 
+  const openPost = () => {
+    history.push(`posts/${post._id}`);
+  };
   const Likes = () => {
     if (post.likes.length > 0) {
       return post.likes.find(
@@ -71,7 +70,12 @@ const Post = ({ post, setCurrentId }) => {
     );
   };
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} raised elevation={6}>
+      <ButtonBase
+        onClick={openPost}
+        className={classes.cardActions}
+      ></ButtonBase>
+
       <CardMedia
         className={classes.media}
         image={
@@ -98,7 +102,6 @@ const Post = ({ post, setCurrentId }) => {
           {moment(post.createdAt).fromNow()}
         </Typography>
       </div>
-
       <div className={classes.details}>
         <Typography variant="body2" color="textSecondary" component="h2">
           {post.tags.map((tag) => `#${tag} `)}

@@ -1,18 +1,32 @@
 import * as api from "../api";
-import { LIKE, CREATE, UPDATE, DELETE, FETCH_ALL } from "../constants/actions";
-export const getPosts = () => async (dispatch) => {
+import {
+  LIKE,
+  CREATE,
+  UPDATE,
+  DELETE,
+  FETCH_ALL,
+  FETCH_BY_SEARCH,
+  START_LOADING,
+  END_LOADING,
+  FETCH_POST,
+  COMMENT,
+} from "../constants/actions";
+export const getPosts = (page) => async (dispatch) => {
   try {
-    const pos = await api.fetchPosts();
-    console.log("This is pos :" + pos.data);
-    dispatch({ type: FETCH_ALL, payload: pos.data });
+    dispatch({ type: START_LOADING });
+    const { data } = await api.fetchPosts(page);
+    dispatch({ type: FETCH_ALL, payload: data });
+    dispatch({ type: END_LOADING });
   } catch (error) {
     console.log(error.message);
   }
 };
-export const createPost = (post) => async (dispatch) => {
+export const createPost = (post, history) => async (dispatch) => {
   try {
-    const { data } = await api.createPost(post);
+    dispatch({ type: START_LOADING });
 
+    const { data } = await api.createPost(post);
+    history.push(`/posts/${data._id}`);
     dispatch({ type: CREATE, payload: data });
   } catch (error) {
     console.log(error.message);
@@ -47,10 +61,35 @@ export const likePost = (id) => async (dispatch) => {
   }
 };
 
+export const commentPost = (value, id) => async (dispatch) => {
+  try {
+    const { data } = await api.commentPost(value, id);
+
+    dispatch({ type: COMMENT, payload: data });
+    return data.comments;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const getPostBySearch = (searchQuery) => async (dispatch) => {
   try {
+    dispatch({ type: START_LOADING });
+
     const { data } = await api.getPostBySearch(searchQuery);
-    console.log(data);
+    dispatch({ type: FETCH_BY_SEARCH, payload: data });
+    dispatch({ type: END_LOADING });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const getPost = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: START_LOADING });
+    const { data } = await api.getPost(id);
+    dispatch({ type: FETCH_POST, payload: data });
+    dispatch({ type: END_LOADING });
   } catch (error) {
     console.log(error.message);
   }
