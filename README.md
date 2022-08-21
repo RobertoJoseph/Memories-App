@@ -61,3 +61,10 @@ To get your Google ClientID for authentication, go to the credential Page (if yo
 * Name your OAuth client and click Create
 * Remember to provide your domain and redirect URL so that Google identifies the origin domain to which it can display the consent (screen. In development, that is going to be http://localhost:3000 and http://localhost:3000/login
 * Copy the Client ID and assign it to the variable REACT_APP_GOOGLE_CLIENT_ID in your .env file
+
+```javascript
+$ cd client
+$ npm install (to install client-side dependencies)
+$ npm start (to start the client)
+```
+
