@@ -121,7 +121,7 @@ const Form = ({ currentId, setCurrentId }) => {
           type="submit"
           fullWidth
         >
-          Submit
+          Submits
         </Button>
         <Button
           variant="contained"
