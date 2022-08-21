@@ -53,3 +53,11 @@ In the first terminal
 PORT= 8000
 CONNECTION_URL=mongodb+srv://username:password@cluster0.tmwp1g9.mongodb.net/?retryWrites=true&w=majority
 ```
+
+To get your Google ClientID for authentication, go to the credential Page (if you are new, then create a new project first and follow the following steps;
+
+* Click Create credentials > OAuth client ID.
+* Select the Web application type.
+* Name your OAuth client and click Create
+* Remember to provide your domain and redirect URL so that Google identifies the origin domain to which it can display the consent (screen. In development, that is going to be http://localhost:3000 and http://localhost:3000/login
+* Copy the Client ID and assign it to the variable REACT_APP_GOOGLE_CLIENT_ID in your .env file
