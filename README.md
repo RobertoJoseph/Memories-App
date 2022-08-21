@@ -7,6 +7,10 @@
 ### Roadmap
 ---
 *  [Introduction](https://github.com/RobertoJoseph/Memories-App#introduction "Named link title")
+*  [Key Features](https://github.com/panshak/accountill#key-features "Named link title")
+*  [Technologies used](https://github.com/panshak/accountill#technologies-used "Named link title")
+
+
 
 ### Introduction
 ---
