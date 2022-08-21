@@ -9,7 +9,6 @@
 *  [Introduction](https://github.com/RobertoJoseph/Memories-App#introduction "Named link title")
 *  [Key Features](https://github.com/RobertoJoseph/Memories-App#key-features "Named link title")
 *  [Technologies used](https://github.com/RobertoJoseph/Memories-APp#technologies-used "Named link title")
-  * Unordered sub-list. 
 
 
 ### Introduction
