@@ -5,7 +5,7 @@
 
 
 ### Roadmap
-
+---
 *  [Introduction](https://github.com/RobertoJoseph/Memories-App#introduction "Named link title")
 
 ### Introduction
@@ -38,3 +38,18 @@ This is a side project I've been working on. A full stack social media  applicat
  Database
   * MongoDB (MongoDB Atlas)
 
+### Configuration and Setup
+
+In order to run this project locally, simply fork and clone the repository or download as zip and unzip on your machine.
+ * Open the project in your prefered code editor.
+ * Go to terminal -> New terminal (If you are using VS code)
+ * Split your terminal into two (run the client on one terminal and the server on the other terminal) 
+
+In the first terminal
+ * cd server and create a .env file in the root of your client directory.
+ * Supply the following credentials
+
+```javascript
+PORT= 8000
+CONNECTION_URL=mongodb+srv://username:password@cluster0.tmwp1g9.mongodb.net/?retryWrites=true&w=majority
+```
