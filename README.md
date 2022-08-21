@@ -4,7 +4,10 @@
 ![ezgif com-gif-maker-2](https://user-images.githubusercontent.com/67745591/185786916-a0960afa-7911-4aee-a854-75bb2cbe86be.gif)
 
 
-#### Roadmap
+### Roadmap
 ---
-*  [Introduction](https://github.com/RobertoJoseph/Memories-App#introduction "Named link title") and http://www.google.fr/ or <http://example.com/>
+*  [Introduction](https://github.com/RobertoJoseph/Memories-App#introduction "Named link title")
 
+### Introduction
+---
+This is a side project I've been working on. A full stack social media  application made using the MERN stack (MongoDB, Express, React & Nodejs), specially designed for practice. With this application, you can create, update, like, delete posts and create comments. Download the entire Source code and run it on your server. This project is something I've been working on in my free time so I cannot be sure that everything will work out correctly. But I'll appreciate you if can report any issue.
