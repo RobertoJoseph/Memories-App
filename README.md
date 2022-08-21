@@ -5,7 +5,7 @@
 
 
 ### Roadmap
----
+
 *  [Introduction](https://github.com/RobertoJoseph/Memories-App#introduction "Named link title")
 
 ### Introduction
@@ -36,5 +36,5 @@ This is a side project I've been working on. A full stack social media  applicat
   * bcryptjs (for data encryption)
 
  Database
-  MongoDB (MongoDB Atlas)
+  * MongoDB (MongoDB Atlas)
 
