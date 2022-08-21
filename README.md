@@ -11,3 +11,7 @@
 ### Introduction
 ---
 This is a side project I've been working on. A full stack social media  application made using the MERN stack (MongoDB, Express, React & Nodejs), specially designed for practice. With this application, you can create, update, like, delete posts and create comments. Download the entire Source code and run it on your server. This project is something I've been working on in my free time so I cannot be sure that everything will work out correctly. But I'll appreciate you if can report any issue.
+
+### Key Features
+---
+
