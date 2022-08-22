@@ -34,6 +34,7 @@ This is a side project I've been working on. A full stack social media  applicat
 
  Server
   * Express
+  * Nodejs
   * Mongoose
   * JWT (For authentication
   * bcryptjs (for data encryption)
