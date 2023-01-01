@@ -72,3 +72,11 @@ $ npm install (to install client-side dependencies)
 $ npm start (to start the client)
 ```
 
+## END POINTS
+---
+
+Our Api is divided into 6 parts
+
+
+
+
