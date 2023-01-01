@@ -100,9 +100,30 @@ Our Api is divided into 6 parts
  ```javascript
   {
   result: {firstName:"Roberto", lastName:"Joseph",email:"robertojoseph@gmail.com",password:"hashedPassword",gender:"Male"}, 
-  token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+  token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJz
+  dWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
   type:"individualTrainee"
   }
-  
   ```
-
+#### Login trainee
+- Route: `/signin`
+- Request Type: `post`
+- Request Body :
+ ```javascript
+ {
+ email: "robertojoseph@gmail.com",
+ password:"pass123"
+ }
+```
+- Response Body:
+ ```javascript
+ {
+ result: {firstName:"Roberto", lastName:"Joseph",email:"robertojoseph@gmail.com",password:"hashedPassword",gender:"Male"
+                },
+ token:{"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJz
+  dWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"},
+ type:"individualTrainee"
+ }
+ ```
+ 
+ 
