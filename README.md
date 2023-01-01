@@ -84,7 +84,7 @@ Our Api is divided into 6 parts
 #### Add Trainee
 - Route : `/signup`
 ```javascript
- Request type : `post`
+ Request Type : `post`
  Request Body : 
  
   {
