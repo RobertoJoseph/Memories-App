@@ -77,6 +77,28 @@ $ npm start (to start the client)
 
 Our Api is divided into 6 parts
 
+### Users Router 
+#### Route : `/users`
 
 
+#### Add Trainee
+- Route : `/signup`
+```javascript
+- Request type : `post`
+- Request Body : 
+ 
+  {
+  firstName: 'Roberto',
+  lastName: 'Joseph',
+  email: 'robertojoseph@gmail.com',
+  password: 'pass12345',
+  gender:"Male",
+  
+ }
+- Response Body:
+  {
+  result: {firstName:"Roberto", lastName:"Joseph"}
+  }
+  
+  ```
 
