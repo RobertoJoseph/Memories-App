@@ -84,8 +84,8 @@ Our Api is divided into 6 parts
 #### Add Trainee
 - Route : `/signup`
 ```javascript
-- Request type : `post`
-- Request Body : 
+ Request type : `post`
+ Request Body : 
  
   {
   firstName: 'Roberto',
@@ -95,9 +95,10 @@ Our Api is divided into 6 parts
   gender:"Male",
   
  }
-- Response Body:
+ Response Body:
   {
-  result: {firstName:"Roberto", lastName:"Joseph"}
+  result: {firstName:"Roberto", lastName:"Joseph",email:"robertojoseph@gmail.com",password:"hashedPassword",gender:"Male"}, token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+  type:"individualTrainee"
   }
   
   ```
