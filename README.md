@@ -134,7 +134,9 @@ Our Api is divided into 6 parts
 #### Forgot Password
 - Route: `/sendEmail`
 - Request Type: `post`
-- Request Body: ```javascript {email:"robertojoseph@gmail.com"} ```
+- Request Body: ```javascript  
+       {email:"robertojoseph@gmail.com"}
+       ```
 
 
 ### Trainee Router 
@@ -143,8 +145,10 @@ Our Api is divided into 6 parts
 #### Paycourse
 - Route: `/payCourse`
 - Request Type: `post`
-- Request Body: ```javascript {courses, instructorId:"63b19f456422dcc9bbca8c35, traineeId:"63b19f456422dcc9bbca8c35"}```
-- Respond Body: ```javascript {url: `sessionUrl`}```
+- Request Body: ```javascript
+  {courses, instructorId:"63b19f456422dcc9bbca8c35, traineeId:"63b19f456422dcc9bbca8c35"} 
+  ```
+- Respond Body: ```javascript {url: `sessionUrl`} ```
 
 
 
