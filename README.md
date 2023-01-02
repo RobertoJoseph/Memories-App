@@ -159,6 +159,44 @@ Our Api is divided into 6 parts
   {url: "sessionURL"}
 ```
 
+#### Enroll Course
+- Route: `/enrollCourse`
+- Request Type: `post`
+- Request Body:
+```javascript
+{id:"63b19f456422dcc9bbca8c35", courseId:"63b19f456422dcc9bbca8c35"}
+```
+
+#### Add Grade
+- Route: `/addGrade`
+- Request Type: `post`
+- Request Query:
+```javascript
+{individualTraineeId, courseId, outlineId, score"40", total:"30"}
+```
+
+#### Get Notes
+- Route: `/getNotes`
+- Request Type: `get`
+- Request Query:
+```javascript
+{ userId, courseId, lectureId }
+```
+
+
+#### Create PDF
+- Route: `/createPdf`
+- Request Type: `post`
+- Request Body: 
+```javascript
+{notes: "Array of notes"}
+```
+
+
+
+
+
+
 
 
 
