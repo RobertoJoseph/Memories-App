@@ -1,3 +1,4 @@
+# Asyad-El-Code
 # Memories-App
 
 ### Built with the MERN stack (MongoDB, Express, React and NodeJS).
@@ -589,6 +590,7 @@ Our Api is divided into 6 parts
 #### Add Course
 - Route: `/addNewCourse/:id`
 - Request Type: `post`
+- Request Param: `id`
 - Request Body:
 ```javascript
   {
@@ -610,7 +612,7 @@ Our Api is divided into 6 parts
 #### Filter by subject and price
 - Route: `filterBySubjectAndPrice/:id`
 - Request Type: `get`
-- Request Body:
+- Request param:
 ```javascript
 { subject: "ComputerScience", minPriceL: 40, maxPrice: 80 }
 ```
@@ -618,10 +620,74 @@ Our Api is divided into 6 parts
 #### Update Information
 - Route :`/updateInformation/:id`
 - Request Type: `post`
-- Request Body:
+- Request param:
 ```javascript
 { firstName, lastName, country, phoneNumber, biography }
 ```
+
+
+#### Get all instructor courses
+- Route: `getAllInstructorCourses/:id`
+- Request Type: `get`
+- Request param:
+```javascript
+{id:"63b19f456422dcc9bbca8c35"}
+```
+
+#### Define Promotion
+- Route: `/definePromotion`
+- Request Type: `post`
+- Request Body:
+```javascript
+ { courseId, discount, startDate: "Date Value" , endDate: "Date Value" }
+```
+
+
+### Course Router 
+#### Route : `/course`
+
+#### Get Course
+- Route: `/getCourse`
+- Request Type: `get`
+- Request body: 
+```javsscript
+{courseId:"63b19f456422dcc9bbca8c35"}
+```
+
+#### Filter All Courses
+- Route: `/filterAllCourses`
+- Request Type: `get`
+- Request Query:
+```javascript
+{ subject: "ComputerScience", price: 40, rating: 80 }
+```
+
+#### Add Rating 
+- Route: `/addRating`
+- Request Type: `post`
+- Request Query:
+```javascript
+{courseId, corporateTraineeId, individualTraineeId, rating}
+```
+
+#### Request Refund
+- Route: `/requestRefund`
+- Request Type: `post`
+- Request Query:
+```javascript
+ {
+    course,
+    type,
+    individualTraineeId,
+    coorporateTraineeId,
+    firstName,
+    lastName,
+    email,
+    refundReason,
+    refundType,
+  }
+```
+
 
 
 
