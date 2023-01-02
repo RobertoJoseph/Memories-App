@@ -135,7 +135,7 @@ Our Api is divided into 6 parts
 - Route: `/sendEmail`
 - Request Type: `post`
 - Request Body:
-       ```javascript  
+ ```javascript  
        {email:"robertojoseph@gmail.com"}
        ```
 
@@ -148,9 +148,9 @@ Our Api is divided into 6 parts
 - Route: `/payCoyrse`
 - Request Type: `post`
 - Request Body: 
-  ```javascript  
+```javascript 
        {courses, instructorId:"232325455626177171", traineeId:"232325455626177171"}
-  ```
+```
 
 
 
