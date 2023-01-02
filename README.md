@@ -81,7 +81,7 @@ Our Api is divided into 6 parts
 #### Route : `/users`
 
 
-#### Add Trainee
+#### Add User
 - Route : `/signup`
 - Request Type : `post`
 - Request Body : 
@@ -105,7 +105,7 @@ Our Api is divided into 6 parts
   type:"individualTrainee"
   }
   ```
-#### Login trainee
+#### Login User
 - Route: `/signin`
 - Request Type: `post`
 - Request Body :
@@ -134,10 +134,20 @@ Our Api is divided into 6 parts
 #### Forgot Password
 - Route: `/sendEmail`
 - Request Type: `post`
-- Request Body:
- ```javascript
-{ email: "robertojoseph@gmail.com"}
-```
+- Request Body: ```javascript {email:"robertojoseph@gmail.com"}```
+
+
+### Trainee Router 
+#### Route : `/individualTrainee`
+
+#### Paycourse
+- Route: `/payCourse`
+- Request Type: `post`
+- Request Body: ```javascript {courses, instructorId:"63b19f456422dcc9bbca8c35, traineeId:"63b19f456422dcc9bbca8c35"}
+- Respond Body: ```javascript {url: `sessionUrl`}
+
+
+
 
  
  
