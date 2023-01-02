@@ -583,12 +583,45 @@ Our Api is divided into 6 parts
 {notes: "Array of notes"}
 ```
 
+### Instructor Router 
+#### Route : `/instructor`
 
+#### Add Course
+- Route: `/addNewCourse/:id`
+- Request Type: `post`
+- Request Body:
+```javascript
+  {
+    title,
+    summary,
+    subject,
+    duration,
+    releaseDate,
+    language,
+    image,
+    rating,
+    previewVideo,
+    outline: []
+    excercises:[]
+    price,
+}
+```
 
+#### Filter by subject and price
+- Route: `filterBySubjectAndPrice/:id`
+- Request Type: `get`
+- Request Body:
+```javascript
+{ subject: "ComputerScience", minPriceL: 40, maxPrice: 80 }
+```
 
-
-
-
+#### Update Information
+- Route :`/updateInformation/:id`
+- Request Type: `post`
+- Request Body:
+```javascript
+{ firstName, lastName, country, phoneNumber, biography }
+```
 
 
 
