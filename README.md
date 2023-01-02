@@ -143,6 +143,14 @@ Our Api is divided into 6 parts
 #### Route : `/individualTrainee`
 
 
+#### PayCourse 
+- Route: `/payCoyrse`
+- Request Type: `post`
+- Request Body: ```javascript  
+       {courses, instructorId:"232325455626177171", traineeId:"232325455626177171"}
+       ```
+
+
 
 
  
