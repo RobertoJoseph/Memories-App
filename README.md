@@ -130,5 +130,15 @@ Our Api is divided into 6 parts
  type:"individualTrainee"
  }
  ```
+
+#### Forgot Password
+- Route: `/sendEmail`
+- Request Type: `post`
+- Request Body:
+ ```javascript
+{ email: "robertojoseph@gmail.com"}
+```
+
+ 
  
  
